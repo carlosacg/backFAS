@@ -14,6 +14,7 @@ const itemRoutes=require('./routes/item');
 
 //SETTINGS
 app.set('port', process.env.PORT || 3000);
+app.use(cors({origin:'https://test-angular-uv.herokuapp.com'})); //PERMITE COMUNICACION CON ANGULAR
 
 
 //MIDDLEWARES

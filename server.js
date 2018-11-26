@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const app = express();
+const cors = require('cors');
+
 //IMPORTING ROUTES
 
 
@@ -14,6 +16,8 @@ const itemRoutes=require('./routes/item');
 
 //SETTINGS
 app.set('port', process.env.PORT || 3000);
+app.use(cors({origin:'https://test-angular-uv.herokuapp.com'})); //PERMITE COMUNICACION CON ANGULAR
+
 
 //MIDDLEWARES
 app.use(morgan('dev'));

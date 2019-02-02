@@ -6,6 +6,7 @@ const itemController=require('../controllers/itemController');
 
 router.get('/',itemController.getItems); //OBTIENE TODOS LOS USUARIOS
 router.get('/:id',itemController.getEspecifyItem); //OBTIENE UN USUARIO ESPECIFICO
+router.get('/:id',itemController.getItemByUser); //OBTIENE UN USUARIO ESPECIFICO
 router.post('/',itemController.createItem);//CREA UN USUARIO
 router.put('/:id',itemController.updateItem);//ACTUALIZA UN USUARIO
 router.delete('/:id',itemController.deleteItem);//ELIMINA UN USUARIO

@@ -6,6 +6,7 @@ const budgetController=require('../controllers/budgetController');
 
 router.get('/',budgetController.getBudgets); //OBTIENE TODOS LOS USUARIOS
 router.get('/:id',budgetController.getEspecifyBudget); //OBTIENE UN USUARIO ESPECIFICO
+router.get('/:id',budgetController.getBudgetByUser); //OBTIENE UN PRESUPUESTO ASOCIADO A UN USUARIO ESPECIFICO
 router.post('/',budgetController.createBudget);//CREA UN USUARIO
 router.put('/:id',budgetController.updateBudget);//ACTUALIZA UN USUARIO
 router.delete('/:id',budgetController.deleteBudget);//ELIMINA UN USUARIO

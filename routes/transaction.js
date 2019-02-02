@@ -6,6 +6,7 @@ const transactionController=require('../controllers/transactionController');
 
 router.get('/',transactionController.getTransactions); //OBTIENE TODOS LOS USUARIOS
 router.get('/:id',transactionController.getEspecifyTransaction); //OBTIENE UN USUARIO ESPECIFICO
+router.get('/:id',transactionController.getTransactionByUsers); //OBTIENE TRANSACCIONES DE UN USUARIO ESPECIFICO
 router.post('/',transactionController.createTransaction);//CREA UN USUARIO
 router.put('/:id',transactionController.updateTransaction);//ACTUALIZA UN USUARIO
 router.delete('/:id',transactionController.deleteTransaction);//ELIMINA UN USUARIO

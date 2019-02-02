@@ -24,6 +24,15 @@ budgetController.getEspecifyBudget=(req,res)=>{//LISTA LOS DATOS
     })
 };
 
+budgetController.getBudgetByUser=(req,res)=>{//LISTA LOS DATOS
+    mysqlConnection.query("SELECT * FROM budget WHERE identification='"+req.params.id+"';",(err,budgets)=>{
+        if(err){
+            res.json(err);
+        }
+        res.json(budgets);
+    })
+};
+
 
 budgetController.createBudget=(req,res)=>{//LISTA LOS DATOS
     console.log(req.body);

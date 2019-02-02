@@ -22,6 +22,15 @@ accountController.getEspecifyAccount=(req,res)=>{//LISTA LOS DATOS
     })
 };
 
+accountController.getAccountByUser=(req,res)=>{//LISTA LOS DATOS
+    mysqlConnection.query("SELECT * FROM account WHERE identification='"+req.params.id+"';",(err,accounts)=>{
+        if(err){
+            res.json(err);
+        }
+        res.json(accounts);
+    })
+};
+
 
 accountController.createAccount=(req,res)=>{//LISTA LOS DATOS
     console.log(req.body);

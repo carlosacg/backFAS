@@ -24,6 +24,16 @@ itemController.getEspecifyItem=(req,res)=>{//LISTA LOS DATOS
     })
 };
 
+itemController.getItemByUser=(req,res)=>{//LISTA LOS DATOS
+    console.log(req.params);
+    mysqlConnection.query("SELECT item_number,budget_number,planned_balance,spent_balance,description FROM item NATURAL JOIN budget WHERE identification="+req.params.id+";",(err,items)=>{
+        if(err){
+            res.json(err);
+        }
+        res.json(items);
+    })
+};
+
 
 
 itemController.createItem=(req,res)=>{//LISTA LOS DATOS

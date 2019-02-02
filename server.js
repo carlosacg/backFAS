@@ -17,7 +17,6 @@ const itemRoutes=require('./routes/item');
 //SETTINGS
 app.set('port', process.env.PORT || 3000);
 app.use(cors({origin:'https://fas-uv.herokuapp.com'})); //PERMITE COMUNICACION CON ANGULAR
-app.use(cors({origin:'http://fas-uv.herokuapp.com'})); //PERMITE COMUNICACION CON ANGULAR
 
 
 //MIDDLEWARES

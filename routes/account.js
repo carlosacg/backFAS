@@ -5,7 +5,7 @@ const router = express.Router();
 const accountController=require('../controllers/accountController'); 
 
 router.get('/',accountController.getAccounts); //OBTIENE TODOS LOS USUARIOS
-router.get('/:id',accountController.getEspecifyAccount); //OBTIENE UN USUARIO ESPECIFICO
+//router.get('/:id',accountController.getEspecifyAccount); //OBTIENE UN USUARIO ESPECIFICO
 router.get('/:id',accountController.getAccountByUser); //OBTIENE UNA CUENTA DE UN USUARIO ESPECIFICO
 router.post('/',accountController.createAccount);//CREA UN USUARIO
 router.put('/:id',accountController.updateAccount);//ACTUALIZA UN USUARIO

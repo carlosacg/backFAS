@@ -1,14 +1,12 @@
-//CLASE QUE CONTIENE LAS RUTAS DE LAS DIRECCIONES WEBS QUE USA LA APLICACION EN EL MODULO USUARIOS
 
 const express = require('express');
 const router = express.Router();
-const accountController=require('../controllers/accountController'); 
+const accountController = require('../controllers/accountController');
 
-router.get('/',accountController.getAccounts); //OBTIENE TODOS LOS USUARIOS
-//router.get('/:id',accountController.getEspecifyAccount); //OBTIENE UN USUARIO ESPECIFICO
-router.get('/:id',accountController.getAccountByUser); //OBTIENE UNA CUENTA DE UN USUARIO ESPECIFICO
-router.post('/',accountController.createAccount);//CREA UN USUARIO
-router.put('/:id',accountController.updateAccount);//ACTUALIZA UN USUARIO
-router.delete('/:id',accountController.deleteAccount);//ELIMINA UN USUARIO
+router.get('/', accountController.getAccounts);
+router.get('/:id', accountController.getAccountByUser);
+router.post('/', accountController.createAccount);
+router.put('/:id', accountController.updateAccount);
+router.delete('/:id', accountController.deleteAccount);
 
-module.exports= router;
+module.exports = router;

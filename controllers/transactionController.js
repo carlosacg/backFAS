@@ -23,7 +23,7 @@ transactionController.getFiltrerTransactions = (req, res) => {
 };
 
 transactionController.getTransactionByUsers = (req, res) => {
-    mysqlConnection.query("SELECT transaction_number,item_number,account_number,spent_date,spent_balance,description FROM transactions,account WHERE transactions.account_number=account.account_number AND identification=" + req.params.id + ";", (err, transactions) => {
+    mysqlConnection.query("SELECT transaction_number,item_number,transactions.account_number,spent_date,spent_balance,transactions.description FROM transactions, account WHERE transactions.account_number=account.account_number AND identification=" + req.params.id + ";", (err, transactions) => {
         if (err) {
             res.json(err);
         }

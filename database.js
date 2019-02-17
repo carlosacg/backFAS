@@ -2,8 +2,8 @@ const mysql = require('mysql');
 
 const mysqlConnection = mysql.createConnection({
     host: 'db4free.net',
-    user: 'un1v4ll3',
-    password: 'un1v4ll3',
+    user: 'un1v4ll3uv',
+    password: 'un1v4ll3uv',
     port: 3306,
     database: 'fas_db'
 })

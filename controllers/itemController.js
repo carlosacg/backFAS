@@ -23,7 +23,9 @@ itemController.getItemByUser = (req, res) => {
 itemController.createItem = (req, res) => {
     const item = new Item(req.body);
     res.json('recibido');
+    console.log(item);
     let instrucQuery = "INSERT INTO item VALUES (DEFAULT," + item.budget_number + "," + item.planned_balance + "," + item.spent_balance + ",'" + item.description + "');";
+    console.log(instrucQuery);
     mysqlConnection.query(instrucQuery, (err, users) => {
         console.log(users);
     })

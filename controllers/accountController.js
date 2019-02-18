@@ -12,7 +12,18 @@ accountController.getAccounts = (req, res) => {
 };
 
 accountController.getAccountByUser = (req, res) => {
+    console.log(req.params.id);
     mysqlConnection.query("SELECT * FROM account WHERE identification='" + req.params.id + "';", (err, accounts) => {
+        if (err) {
+            res.json(err);
+        }
+        res.json(accounts);
+    })
+};
+
+accountController.getEspecifyAccount = (req, res) => {
+    console.log(req.params.id);
+    mysqlConnection.query("SELECT * FROM account WHERE account_number=" + req.params.id + ";", (err, accounts) => {
         if (err) {
             res.json(err);
         }
@@ -37,7 +48,8 @@ accountController.updateAccount = (req, res) => {
     console.log(req.body);
     const newAccount = req.body;
     console.log(newAccount);
-    let instrucQuery = "UPDATE account SET type_account='" + newAccount.type_account + "', positive_balance=" + newAccount.positive_balance + ", negative_balance=" + newAccount.negative_balance + ", description='" + newAccount.description + "', bank_name='" + newAccount.bank_name + "', identification=" + newAccount.identification + " WHERE account_number =" + id + ";";
+    let instrucQuery = "UPDATE account SET type_account='" + newAccount.type_account + "', positive_balance=" + newAccount.positive_balance + ", negative_balance=" + newAccount.negative_balance + ", description='" + newAccount.description + "', bank_name='" + newAccount.bank_name + "' WHERE account_number =" + id + ";";
+    console.log(instrucQuery);
     mysqlConnection.query(instrucQuery, (err, users) => {
         console.log(users);
     })

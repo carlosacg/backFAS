@@ -35,7 +35,8 @@ transactionController.getTransactionByUsers = (req, res) => {
 transactionController.createTransaction = (req, res) => {
     const transactions = new Transaction(req.body);
     res.json('recibido');
-    let instrucQuery = "INSERT INTO transactions VALUES (DEFAULT," + transactions.item_number + "," + transactions.account_number + ", CURRENT_DATE" + "," + transactions.spent_balance + ",'" + transactions.description + "');";
+    let instrucQuery = "INSERT INTO transactions VALUES (DEFAULT," + transactions.item_number + "," + transactions.account_number + ", NOW()" + "," + transactions.spent_balance + ",'" + transactions.description + "');";
+    console.log(instrucQuery);
     mysqlConnection.query(instrucQuery, (err, transactions) => {
         console.log(transactions);
     })

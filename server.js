@@ -11,7 +11,7 @@ const itemRoutes = require('./routes/item');
 
 app.set('port', process.env.PORT || 3000);
 
-app.use(cors({ origin: 'https://fas-uv.herokuapp.com/' }));
+app.use(cors({ origin: 'https://fas-uv.herokuapp.com' }));
 
 app.use(morgan('dev'));
 app.use(express.json());

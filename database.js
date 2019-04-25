@@ -8,6 +8,7 @@ const mysqlConnection = mysql.createConnection({
     database: 'fas_db'
 })
 
+
 mysqlConnection.connect(function (err) {
     if (err) {
         console.log();
